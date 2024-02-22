@@ -10,6 +10,9 @@ body{
     background-color: #d8dbd5;
     position: relative;
 }
+#app{
+    padding-top: 25px;
+}
 /* banda verde in sfondo */
 .top-back-bar{
     width: 100%;
@@ -20,10 +23,10 @@ body{
 }
 
 /* container con l'interfaccia */
-.container{
-    width: 1600px;
+.my_container{
+    max-width: 1600px;
     margin: 0 auto;
-    height: calc(100vh - 50px);
+    height: calc(100% - 50px);
 
     display: flex;
 }
@@ -35,7 +38,7 @@ body{
 }
 .content{
     flex-grow: 1;
-    height: 100%;
+    width: 100%;
     
 
     /* test  */
@@ -57,12 +60,14 @@ stilizzazione tutte immagini profilo*/
 .account_name{
     padding-left: 10px;
 }
+
+
 /* mio account */
 .my_account{
     display: flex;
     justify-content: space-between;
     padding: 10px;
-
+    
     background-color: #eaeaea;
 }
 .left_side, .right_side{
@@ -80,7 +85,7 @@ stilizzazione tutte immagini profilo*/
 .alerts{
     background-color: #8edafc;
     padding: 15px 20px;
-
+    
     display: flex;
     align-items: center;
 }
@@ -102,15 +107,24 @@ stilizzazione tutte immagini profilo*/
     color: #54748f;
 }
 
+/* input */
+.input_container{
+    padding: 10px;
+}
 
 
+.side_bottom_part{
+    height: 750px;
+    overflow-y: auto;
+}
 /* contenuti dimanici js */
 .contacts_container{
     display: flex;
     justify-content: space-between;
     padding: 10px 20px;
 
-    border-bottom: 1px solid #eaeaea;
+    border: solid #eaeaea;
+    border-width: 1px 0;
 }
 .rounded_conctacts{
     width: 60px;
