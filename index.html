@@ -41,7 +41,7 @@
                             <img src="./img/avatar_io.jpg" alt="pic account">
                         </div>
                         <!-- nome -->
-                        <div class="account_name">
+                        <div class="account_name fw-semibold">
                             Sofia
                         </div>
                     </div>
@@ -88,7 +88,7 @@
                                 <img :src="currentProfile.avatar" :alt="'immagine profilo ' + (index + 1) ">
                             </div>
                             <div class="contacts_info">
-                                <div class="name">{{currentProfile.name}}</div>
+                                <div class="name fw-semibold">{{currentProfile.name}}</div>
                                 <div class="last_message">Ultimo messaggio inviato</div>
                             </div>
                             
@@ -115,8 +115,8 @@
                             <img :src="currentProfile.avatar" />
                         </div>
                         <div class="contacts_info">
-                            <div class="name">{{ currentProfile.name }}</div>
-                            <div>Ultimo accesso oggi alle 12:00</div>
+                            <div class="name fw-semibold">{{ currentProfile.name }}</div>
+                            <div class="last_access">Ultimo accesso oggi alle 12:00</div>
                         </div>    
                     </div>
 
@@ -128,13 +128,35 @@
                 </div>
 
 
-                <!-- parte con i messaggi -->
 
+
+                <!-- parte con i messaggi -->
+                <div class="messagge_container">
+                    
+                </div>
+
+
+
+                
 
 
                 <!-- barra di digitazione -->
+                <div class="bottom_search_bar">
+                    <div class="emojis">
+                        <i class="fa-regular fa-face-smile"></i>
+                    </div>
 
-                
+                    <div class="type w-100">
+                        <div class="input-group flex-nowrap">
+                            <input type="text" class="form-control" placeholder="Scrivi un messaggio">
+                        </div>
+                    </div>
+
+                    <div class="mic">
+                        <i class="fa-solid fa-microphone"></i>
+                    </div>
+                </div>
+
             </main>
 
 
