@@ -47,7 +47,7 @@
                     </div>
 
                     <!-- icone -->
-                    <div class="right_side">
+                    <div class="right_side icons">
                         <i class="fa-solid fa-circle-notch"></i>
                         <i class="fa-solid fa-message"></i>
                         <i class="fa-solid fa-ellipsis-vertical"></i>
@@ -69,8 +69,8 @@
                 <!-- input -->
                 <div class="input_container">
                     <div class="input-group">
-                        <span class="input-group-text">
-                            <i class="fa-solid fa-magnifying-glass"></i>
+                        <span class="input-group-text bg-white">
+                            <i class="fa-solid fa-magnifying-glass px-3"></i>
                         </span>
                         <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat">
                       </div>                      
@@ -78,7 +78,10 @@
 
                 <!-- parte inferiore -->
                 <div class="side_bottom_part">
-                    <div class="contacts_container" v-for="(currentProfile, index) in contacts">
+                    <div class="contacts_container" 
+                    v-for="(currentProfile, index) in contacts"
+                    @click="changeMain(index)"
+                    >
 
                         <div class="left_side">
                             <div class="rounded_conctacts">
@@ -101,8 +104,37 @@
                 </div>
 
             </nav>
+
+            <!-- main part -->
             <main class="content">
 
+                <!-- parte superiore -->
+                <div class="top_info_bar">
+                    <div class="left_side">
+                        <div class="rounded_conctacts">
+                            <img :src="currentProfile.avatar" />
+                        </div>
+                        <div class="contacts_info">
+                            <div class="name">{{ currentProfile.name }}</div>
+                            <div>Ultimo accesso oggi alle 12:00</div>
+                        </div>    
+                    </div>
+
+                    <div class="right_side icons">                        
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <i class="fa-solid fa-paperclip"></i>
+                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                    </div>
+                </div>
+
+
+                <!-- parte con i messaggi -->
+
+
+
+                <!-- barra di digitazione -->
+
+                
             </main>
 
 
