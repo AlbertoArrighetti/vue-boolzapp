@@ -1,0 +1,80 @@
+/* reset  */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: sans-serif;
+    background-color: #d8dbd5;
+    position: relative;
+}
+/* banda verde in sfondo */
+.top-back-bar{
+    width: 100%;
+    height: 150px;
+    background-color: #009688;
+    position: absolute;
+    z-index: -1;
+}
+
+/* container con l'interfaccia */
+.container{
+    width: 1600px;
+    margin: 0 auto;
+    height: calc(100vh - 50px);
+
+    display: flex;
+}
+.sidebar{
+    width: 560px;
+    height: 100%;
+    
+
+    /* test  */
+    background-color: red;
+}
+.content{
+    flex-grow: 1;
+    height: 100%;
+    
+
+    /* test  */
+    background-color: blue;
+}
+
+/* sidebar 
+stilizzazione tutte immagini profilo*/
+.account_picture{
+    width: 52px;
+    height: 52px;
+}
+.account_picture img {
+    width: 100%;
+
+    border-radius: 50%;
+    object-fit: contain;
+}
+.account_name{
+    padding-left: 10px;
+}
+/* mio account */
+.my_account{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+
+    background-color: #eaeaea;
+}
+.left_side, .right_side{
+    display: flex;
+    align-items: center;
+}
+.right_side{
+    gap: 20px;
+    padding-right: 16px;
+}
+.right_side .fa-solid{
+    color: #b1b1b1;
+}
