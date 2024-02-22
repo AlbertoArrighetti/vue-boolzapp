@@ -125,6 +125,10 @@ stilizzazione tutte immagini profilo*/
     border-width: 1px 0;
     cursor: pointer;
 }
+.contacts_container:hover{
+    background-color: #e9ebeb;
+}
+
 .rounded_conctacts{
     width: 60px;
     height: 60px;
@@ -166,19 +170,13 @@ stilizzazione tutte immagini profilo*/
     color: #9ea3a0;
 }
 /* parte centrale */
-.messagge_container{
+.message_container{
     height: 100%;
     padding: 50px 100px 0;
 }
 
 
 
-.message{
-    padding: 20px 16px;
-    margin-bottom: 16px;
-    border-radius: 15px;
-
-}
 .sent{
     display: flex;
     justify-content: flex-end;
@@ -188,14 +186,29 @@ stilizzazione tutte immagini profilo*/
     background-color: #d5f9ba;
 }
 
-.recive{
+.recived{
     display: flex;
     justify-content: flex-start;
 }
-.recive .message{
+.recived .message{
     background-color: #ffffff;
 }
+.message{
+    padding: 20px 100px 16px 16px ;
+    margin-bottom: 16px;
+    border-radius: 15px;
 
+    display: flex;
+    position: relative;
+}
+.message .time{
+    position: absolute;
+    bottom: 0;
+    right: 10px;
+
+    font-size: 10px;
+    color: grey;
+}
 
 
 
