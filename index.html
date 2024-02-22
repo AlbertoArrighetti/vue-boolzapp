@@ -28,11 +28,13 @@
         <div class="container">
 
             <nav class="sidebar">
+
+
                 <!-- parte superiore -->
                 <div class="my_account">
                     <div class="left_side">
                         <!-- immagine -->
-                        <div class="account_picture">
+                        <div class="rounded_container">
                             <img src="./img/avatar_io.jpg" alt="pic account">
                         </div>
                         <!-- nome -->
@@ -48,6 +50,43 @@
                         <i class="fa-solid fa-ellipsis-vertical"></i>
                     </div>
                 </div>
+
+                <!-- notifiche -->
+                <div class="alerts">
+                    <div class="rounded_container">
+                        <i class="fa-solid fa-bell-slash"></i>
+                    </div>
+
+                    <div class="notification">
+                        <div>Ricevi notifiche di nuovi messaggi</div>
+                        <a href="#">Attiva notifiche desktop</a>
+                    </div>
+                </div>
+
+
+                <!-- parte inferiore -->
+                <div v-for="(currentProfile, index) in contacts">
+                    <div class="contacts_container">
+
+                        <div class="left_side">
+                            <div class="rounded_conctacts">
+                                <img :src="currentProfile.avatar" :alt="'immagine profilo ' + (index + 1) ">
+                            </div>
+                            <div class="contacts_info">
+                                <div class="name">{{currentProfile.name}}</div>
+                                <div class="last_message">Ultimo messaggio inviato</div>
+                            </div>
+                        </div>
+
+                        <div class="right_side">
+                            <div class="time">
+                                12:00
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
             </nav>
             <main class="content">
 
