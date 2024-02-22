@@ -166,6 +166,39 @@ stilizzazione tutte immagini profilo*/
     color: #9ea3a0;
 }
 /* parte centrale */
+.messagge_container{
+    height: 100%;
+    padding: 50px 100px 0;
+}
+
+
+
+.message{
+    padding: 20px 16px;
+    margin-bottom: 16px;
+    border-radius: 15px;
+
+}
+.sent{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.sent .message{
+    background-color: #d5f9ba;
+}
+
+.recive{
+    display: flex;
+    justify-content: flex-start;
+}
+.recive .message{
+    background-color: #ffffff;
+}
+
+
+
+
 
 
 
