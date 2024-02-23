@@ -66,20 +66,28 @@
                     </div>
                 </div>
 
+
+
                 <!-- input -->
                 <div class="input_container">
                     <div class="input-group">
                         <span class="input-group-text bg-white">
                             <i class="fa-solid fa-magnifying-glass px-3"></i>
                         </span>
-                        <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat">
+                        <input v-model="searchQuery" type="text" class="form-control" placeholder="Cerca o inizia una nuova chat">
                       </div>                      
                 </div>
 
+
+
+
+
                 <!-- parte inferiore -->
                 <div class="side_bottom_part">
+
+
                     <div class="contacts_container" 
-                    v-for="(contact, index) in contacts"
+                    v-for="(contact, index) in filteredContacts"
                     :class="contact == activeContact ? 'active' : ''"
                     @click="changeMain(index)"
                     >
@@ -102,6 +110,9 @@
                         </div>
 
                     </div>
+
+
+                    
                 </div>
 
             </nav>

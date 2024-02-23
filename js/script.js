@@ -179,12 +179,14 @@ createApp({
             },
             IntervalLid: null,
 
+
+            searchQuery: '',
         }
     },
 
     methods: {
         changeMain(index) {
-            this.activeContact = this.contacts[index];
+            this.activeContact = this.filteredContacts[index];
         },
 
         addMessage() {
@@ -214,6 +216,13 @@ createApp({
         this.activeContact = this.contacts[0];
     },
 
+    computed: {
+
+        filteredContacts() {
+            return this.contacts.filter(contact => contact.name.toLowerCase().includes(this.searchQuery.toLowerCase()));
+        }
+
+    },
 
     
 }).mount('#app');

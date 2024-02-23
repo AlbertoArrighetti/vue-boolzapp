@@ -25,7 +25,7 @@ body{
 .my_container{
     max-width: 1600px;
     margin: 0 auto;
-    height: 962px;
+    max-height: 962px;
 
     display: flex;
     overflow-y: hidden;
