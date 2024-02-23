@@ -4,7 +4,6 @@ createApp({
         return {
             activeContact: {},
 
-
             contacts: [
                 {
                     name: 'Michele',
@@ -170,9 +169,15 @@ createApp({
                 
             ],
 
+            // inserimento del messaggio
             newMessageText: '',
 
-            
+            // risposta automatica
+            newAnswer: {
+                message: 'Ok',
+                status: 'received',
+            },
+            IntervalLid: null,
 
         }
     },
@@ -193,6 +198,16 @@ createApp({
             }
             this.newMessageText = '';
         },
+
+        automaticAnswer(){
+            this.IntervalLid = setInterval(() => {
+                this.activeContact.messages.push(this.newAnswer);
+            }, 1000);
+            
+            setTimeout(() => {
+                clearInterval(this.IntervalLid)
+            }, 1000);
+        }
     },
 
     mounted() {
