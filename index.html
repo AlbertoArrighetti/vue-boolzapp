@@ -79,16 +79,17 @@
                 <!-- parte inferiore -->
                 <div class="side_bottom_part">
                     <div class="contacts_container" 
-                    v-for="(currentProfile, index) in contacts"
+                    v-for="(contact, index) in contacts"
+                    :class="contact == activeContact ? 'active' : ''"
                     @click="changeMain(index)"
                     >
 
                         <div class="left_side">
                             <div class="rounded_conctacts">
-                                <img :src="currentProfile.avatar" :alt="'immagine profilo ' + (index + 1) ">
+                                <img :src="contact.avatar" :alt="'immagine profilo ' + (index + 1) ">
                             </div>
                             <div class="contacts_info">
-                                <div class="name fw-semibold">{{currentProfile.name}}</div>
+                                <div class="name fw-semibold">{{contact.name}}</div>
                                 <div class="last_message">Ultimo messaggio inviato</div>
                             </div>
                             
@@ -112,10 +113,10 @@
                 <div class="top_info_bar">
                     <div class="left_side">
                         <div class="rounded_conctacts">
-                            <img :src="currentProfile.avatar" />
+                            <img :src="activeContact.avatar" />
                         </div>
                         <div class="contacts_info">
-                            <div class="name fw-semibold">{{ currentProfile.name }}</div>
+                            <div class="name fw-semibold">{{ activeContact.name }}</div>
                             <div class="last_access">Ultimo accesso oggi alle 12:00</div>
                         </div>    
                     </div>
@@ -133,31 +134,25 @@
 
 
                 <!-- parte con i messaggi -->
-                <div 
-                class="message_container"
-                >
-
-
-
-                    <span
-                    v-for="(currentMessage, messageIndex) in currentProfile.messages" 
-                    :class="currentMessage.status == 'sent' ? 'sent' : 'recived'"
+                <div class="message_wrapper">
+                    <div 
+                    class="message_container"
                     >
-                        <div class="message">
-                            {{currentMessage.message}}
-                            <div class="time">
-                                15:30
+                        <span
+                        v-for="(currentMessage, messageIndex) in activeContact.messages" 
+                        :class="currentMessage.status"
+                        >
+                            
+    
+                            <div class="message">
+                                {{currentMessage.message}}
+                                <div class="time">
+                                    15:30
+                                </div>
                             </div>
-                        </div>
-
-                        
-                        
-                    </span>
-
-
-
-
-                    
+                            
+                        </span>
+                    </div>
                 </div>
 
 

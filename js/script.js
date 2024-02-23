@@ -2,7 +2,7 @@ const { createApp } = Vue
 createApp({
     data() {
         return {
-            currentProfile: '',
+            activeContact: {},
 
             contacts: [
                 {
@@ -166,6 +166,7 @@ createApp({
                         }
                     ],
                 },
+                
             ]
             
         }
@@ -173,12 +174,12 @@ createApp({
 
     methods: {
         changeMain(index) {
-            this.currentProfile = this.contacts[index];
+            this.activeContact = this.contacts[index];
         },
     },
 
     mounted() {
-        this.currentProfile = this.contacts[0];
+        this.activeContact = this.contacts[0];
     },
 
 
