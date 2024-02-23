@@ -4,6 +4,7 @@ createApp({
         return {
             activeContact: {},
 
+
             contacts: [
                 {
                     name: 'Michele',
@@ -167,14 +168,30 @@ createApp({
                     ],
                 },
                 
-            ]
+            ],
+
+            newMessageText: '',
+
             
+
         }
     },
 
     methods: {
         changeMain(index) {
             this.activeContact = this.contacts[index];
+        },
+
+        addMessage() {
+            let message;
+            if(this.newMessageText.trim() !== '') {
+                 message = {
+                    message: this.newMessageText,
+                    status: 'sent',
+                }
+                this.activeContact.messages.push(message);
+            }
+            this.newMessageText = '';
         },
     },
 

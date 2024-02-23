@@ -168,7 +168,11 @@
 
                     <div class="type w-100">
                         <div class="input-group flex-nowrap">
-                            <input type="text" class="form-control" placeholder="Scrivi un messaggio">
+                            <input 
+                            v-model="newMessageText" 
+                            @keyup.enter="addMessage()"
+                            type="text" class="form-control" 
+                            placeholder="Scrivi un messaggio">
                         </div>
                     </div>
 
