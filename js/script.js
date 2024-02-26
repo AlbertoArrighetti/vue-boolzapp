@@ -2,8 +2,10 @@ const { createApp } = Vue
 createApp({
     data() {
         return {
+            // visualizzione contatto attivo
             activeContact: {},
 
+            // lista contatti
             contacts: [
                 {
                     name: 'Michele',
@@ -172,7 +174,7 @@ createApp({
             // inserimento del messaggio
             newMessageText: '',
 
-            // risposta automatica
+            // risposta automatica (array da cui viene prelevata una risposta casuale)
             automaticAnswers : [
                 'Ok',
                 'Tutto bene, te come stai?',
@@ -181,32 +183,36 @@ createApp({
                 'Non sta andando male',
             ],
 
-
+            // intervallo per la risposta automatica = null (da settare in funzione)
             IntervalLid: null,
-
-
+            // ricerca contatti side bar
             searchQuery: '',
         }
     },
 
     methods: {
+        // funzione per prelevare il contatto attivo
         changeMain(index) {
             this.activeContact = this.filteredContacts[index];
         },
 
-
-
-        
+        // funzione per risposta automatica
         automaticAnswer() {
+            // inizializzo variabile
             let message;
+            // se il messaggio ha un contenuto che sia diverso da nullo (0)
+            // tramite trim() elimino gli spazi iniziali e finali delle parole in modo che se il messaggio è composto solo da spazi o ne contiene noon vengano conteggiati 
+            // in questo modo l'utente non avrà modo di inviare un messaggio senza contenuto
             if(this.newMessageText.trim().length !== 0) {
+                // creo l'oggetto da inviare
                 message = {
                     message: this.newMessageText,
                     status: 'sent',
                 }
                 this.activeContact.messages.push(message);
-        
+                // setto il timeout per la risposta
                 setTimeout(() => {
+                    // prlevo una risposta dall'array e creo un oggetto
                     this.newAnswer = {
                         message: this.automaticAnswers[Math.floor(Math.random() * this.automaticAnswers.length)],
                         status: 'received',
@@ -218,21 +224,22 @@ createApp({
             this.newMessageText = '';
         },
 
-
-
-
+        // creo una funzione per richiamare sempre quella sopra
         addMessage() {
             this.automaticAnswer();
         },
         
     },
 
+    // il primo conatto al caricamento della pagina è sempre il primo
     mounted() {
         this.activeContact = this.contacts[0];
     },
 
+    // con computed aggiorno sempre il mio campo di input
     computed: {
         filteredContacts() {
+            // filtro il contatto in base a cosa inserisco nel campo di input
             return this.contacts.filter(contact => contact.name.toLowerCase().includes(this.searchQuery.toLowerCase()));
         }
     },

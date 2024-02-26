@@ -4,7 +4,7 @@
     padding: 0;
     box-sizing: border-box;
 }
-
+/* body e container esterni */
 body{
     background-color: #d8dbd5;
     position: relative;
@@ -21,7 +21,7 @@ body{
     z-index: -1;
 }
 
-/* container con l'interfaccia */
+/* container */
 .my_container{
     max-width: 1600px;
     margin: 0 auto;
@@ -108,12 +108,12 @@ stilizzazione tutte immagini profilo*/
     color: #54748f;
 }
 
-/* input */
+/* input bar */
 .input_container{
     padding: 10px;
 }
 
-
+/* parte inferiore con contatti */
 .side_bottom_part{
     height: 750px;
     overflow-y: auto;
@@ -134,7 +134,6 @@ stilizzazione tutte immagini profilo*/
 .contacts_container.active{
     background-color: #e9ebeb;
 }
-
 .rounded_conctacts{
     width: 60px;
     height: 60px;
@@ -186,7 +185,7 @@ stilizzazione tutte immagini profilo*/
 }
 
 
-
+/* gestione messaggi */
 .sent{
     display: flex;
     justify-content: flex-end;
@@ -223,11 +222,6 @@ stilizzazione tutte immagini profilo*/
     color: grey;
 }
 
-
-
-
-
-
 /* parte inferiore */
 .bottom_search_bar{
     display: flex;
@@ -243,7 +237,10 @@ stilizzazione tutte immagini profilo*/
     color: #6b7273;
 }
 
-
+/* 
+MEDIA QUERY
+gestione grandezze font e icone
+*/
 @media screen and (max-width: 576px){
     .last_message, .last_access{
         font-size: 12px;
