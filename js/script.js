@@ -173,10 +173,15 @@ createApp({
             newMessageText: '',
 
             // risposta automatica
-            newAnswer: {
-                message: 'Ok',
-                status: 'received',
-            },
+            automaticAnswers : [
+                'Ok',
+                'Tutto bene, te come stai?',
+                'Che fai di bello oggi?',
+                'Certamente',
+                'Non sta andando male',
+            ],
+
+
             IntervalLid: null,
 
 
@@ -189,6 +194,9 @@ createApp({
             this.activeContact = this.filteredContacts[index];
         },
 
+
+
+        
         automaticAnswer() {
             let message;
             if(this.newMessageText.trim().length !== 0) {
@@ -199,11 +207,19 @@ createApp({
                 this.activeContact.messages.push(message);
         
                 setTimeout(() => {
-                    this.activeContact.messages.push(this.newAnswer);
+                    this.newAnswer = {
+                        message: this.automaticAnswers[Math.floor(Math.random() * this.automaticAnswers.length)],
+                        status: 'received',
+                    }
+
+                    this.activeContact.messages.push(this.newAnswer)
                 }, 1000);
             }
             this.newMessageText = '';
         },
+
+
+
 
         addMessage() {
             this.automaticAnswer();
