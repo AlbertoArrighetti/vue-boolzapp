@@ -98,14 +98,16 @@
                             </div>
                             <div class="contacts_info">
                                 <div class="name fw-semibold">{{contact.name}}</div>
-                                <div class="last_message">Ultimo messaggio inviato</div>
+                                <div class="last_message">                                
+                                    {{contact.messages[contact.messages.length - 1].message}}
+                                </div>
                             </div>
                             
                         </div>
 
                         <div class="right_side">
                             <div class="time">
-                                12:00
+                                {{getTime(contact.messages[contact.messages.length - 1].date)}}
                             </div>
                         </div>
 
@@ -128,7 +130,9 @@
                         </div>
                         <div class="contacts_info">
                             <div class="name fw-semibold">{{ activeContact.name }}</div>
-                            <div class="last_access">Ultimo accesso oggi alle 12:00</div>
+                            <div class="last_access">
+                                <!-- WIP -->
+                            </div>
                         </div>    
                     </div>
 
@@ -158,7 +162,7 @@
                             <div class="message">
                                 {{currentMessage.message}}
                                 <div class="time">
-                                    {{ getTime(currentMessage.date) }}
+                                    {{getTime(currentMessage.date)}}
                                 </div>
                             </div>
                             
