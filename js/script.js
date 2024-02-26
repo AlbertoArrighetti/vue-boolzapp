@@ -189,27 +189,26 @@ createApp({
             this.activeContact = this.filteredContacts[index];
         },
 
-        addMessage() {
+        automaticAnswer() {
             let message;
-            if(this.newMessageText.trim() !== '') {
-                 message = {
+            if(this.newMessageText.trim().length !== 0) {
+                message = {
                     message: this.newMessageText,
                     status: 'sent',
                 }
                 this.activeContact.messages.push(message);
+        
+                setTimeout(() => {
+                    this.activeContact.messages.push(this.newAnswer);
+                }, 1000);
             }
             this.newMessageText = '';
         },
 
-        automaticAnswer(){
-            this.IntervalLid = setInterval(() => {
-                this.activeContact.messages.push(this.newAnswer);
-            }, 1000);
-            
-            setTimeout(() => {
-                clearInterval(this.IntervalLid)
-            }, 1000);
-        }
+        addMessage() {
+            this.automaticAnswer();
+        },
+        
     },
 
     mounted() {
@@ -217,11 +216,9 @@ createApp({
     },
 
     computed: {
-
         filteredContacts() {
             return this.contacts.filter(contact => contact.name.toLowerCase().includes(this.searchQuery.toLowerCase()));
         }
-
     },
 
     

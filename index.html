@@ -181,15 +181,15 @@
                         <div class="input-group flex-nowrap">
                             <input 
                             v-model="newMessageText" 
-                            @keyup.enter="addMessage(), automaticAnswer()"
+                            @keyup.enter="newMessageText !== '' ? addMessage() : '' "
                             type="text" class="form-control" 
                             placeholder="Scrivi un messaggio">
 
                         </div>
                     </div>
 
-                    <div class="mic">
-                        <i class="fa-solid fa-microphone"></i>
+                    <div class="icon" @click="newMessageText !== '' ? addMessage() : '' ">
+                        <i :class=" newMessageText == '' ? 'fa-solid fa-microphone' : 'fa-solid fa-paper-plane' "></i>
                     </div>
                 </div>
 
