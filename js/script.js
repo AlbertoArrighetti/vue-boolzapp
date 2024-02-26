@@ -181,8 +181,16 @@ createApp({
                 'Ok',
                 'Tutto bene, te come stai?',
                 'Che fai di bello oggi?',
-                'Certamente',
+                'Certamente!!',
                 'Non sta andando male',
+                'Niente',
+                'Che fai questo week-end??',
+                '42',
+                'Sono solo un genio, miliardario, playboy e filantropo!',
+                'Hey!',
+                'Chi ti ha dato la patente?',
+                'Non posso ne scendere, ne salire.',
+                'Sono il Signor Wolf, risolvo problemi.',
             ],
 
             // intervallo per la risposta automatica = null (da settare in funzione)
@@ -261,7 +269,7 @@ createApp({
         filteredContacts() {
             // filtro il contatto in base a cosa inserisco nel campo di input
             return this.contacts.filter(contact => contact.name.toLowerCase().includes(this.searchQuery.toLowerCase()));
-        }
+        },
     },
 
     
