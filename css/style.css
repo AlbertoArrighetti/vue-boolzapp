@@ -24,7 +24,7 @@ body{
 /* container */
 .my_container{
     max-width: 1600px;
-    margin: 0 auto;
+    margin: 0 auto 50px;
     max-height: 962px;
 
     display: flex;

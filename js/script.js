@@ -5,6 +5,7 @@ createApp({
             // visualizzione contatto attivo
             activeContact: {},
 
+
             // lista contatti
             contacts: [
                 {
@@ -171,6 +172,7 @@ createApp({
                 
             ],
 
+
             // inserimento del messaggio
             newMessageText: '',
 
@@ -187,6 +189,7 @@ createApp({
             IntervalLid: null,
             // ricerca contatti side bar
             searchQuery: '',
+
         }
     },
 
@@ -220,14 +223,25 @@ createApp({
 
                     this.activeContact.messages.push(this.newAnswer)
                 }, 1000);
+                // solo se il messaggio viene inviato elimino il contenuto dalla barra
+                this.newMessageText = '';
             }
-            this.newMessageText = '';
         },
 
         // creo una funzione per richiamare sempre quella sopra
         addMessage() {
             this.automaticAnswer();
         },
+
+
+
+        getTime(time) {
+            const currentDate = new Date(time);
+            const hours = String(currentDate.getHours()).padStart(2, '0');
+            const minutes = String(currentDate.getMinutes()).padStart(2, '0');
+      
+            return `${hours}:${minutes}`;
+          },
         
     },
 
